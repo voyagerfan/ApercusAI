@@ -16,7 +16,17 @@ class TestUtils:
         result = validation.file_extension(path)
         assert result["extension"] == "csv"
     
-    def test_xls_validations(self):
+    def test_xls_validation(self):
         path = FILE_DIR / "blank_xls.xls"
         result = validation.file_extension(path)
         assert result["extension"] == "xls"
+
+    def test_invalid_file_type_docx(self):
+        path = FILE_DIR / "blank_doc.docx"
+        result = validation.file_extension(path)
+        assert result["extension"] == None
+    
+    def test_invalid_file_type_pdf(self):
+        path = FILE_DIR / "blank_pdf.pdf"
+        result = validation.file_extension(path)
+        assert result["extension"] == None
