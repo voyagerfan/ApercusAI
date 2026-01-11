@@ -3,3 +3,7 @@
 
 #ignore settings
 .vscode/
+
+# ignore pycahce
+__pycache__/
+.pytest_cache
